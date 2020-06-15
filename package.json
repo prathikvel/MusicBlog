@@ -1,0 +1,22 @@
+{
+  "name": "studio-rubric-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prathikvel/StudioRubricWebsite.git"
+  },
+  "author": "prathik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prathikvel/StudioRubricWebsite/issues"
+  },
+  "homepage": "https://github.com/prathikvel/StudioRubricWebsite#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
