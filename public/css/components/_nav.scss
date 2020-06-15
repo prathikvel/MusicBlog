@@ -1,0 +1,32 @@
+nav {
+    padding: 25px 100px;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        color: #000;
+        text-decoration: none;
+
+        &.logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+    }
+    ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+
+        li {
+            font-size: 1.5rem;
+            margin-right: 1.25rem;
+            float: left;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
