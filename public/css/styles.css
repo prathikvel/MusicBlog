@@ -1,5 +1,36 @@
-.jumbotron {
-  border-bottom: 2px solid #000;
+.button {
+  height: 2.5rem;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  border: none;
+  border-radius: 1.25rem;
+  cursor: pointer;
+}
+
+.card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 250px auto auto;
+      grid-template-rows: 250px auto auto;
+}
+
+.card img {
+  width: 100%;
+  max-height: 250px;
+}
+
+.card h2 {
+  font-family: serif;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.card p {
+  line-height: 1.5rem;
 }
 
 .jumbotron h1 {
@@ -12,8 +43,7 @@
 }
 
 nav {
-  padding: 25px 100px;
-  border-bottom: 2px solid #000;
+  margin: 25px 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,7 +62,7 @@ nav a {
 
 nav a.logo {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 nav ul {
@@ -40,9 +70,6 @@ nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 nav ul li {
@@ -58,5 +85,32 @@ nav ul li:last-child {
 body {
   font-family: sans-serif;
   margin: 0;
+}
+
+section {
+  margin: 0 100px;
+}
+
+section.cards {
+  margin-top: 100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  grid-gap: 1.25rem 3rem;
+}
+
+@media (max-width: 1000px) {
+  section.cards {
+    -ms-grid-columns: (auto)[2];
+        grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 600px) {
+  section.cards {
+    -ms-grid-columns: (auto)[1];
+        grid-template-columns: repeat(1, auto);
+  }
 }
 /*# sourceMappingURL=styles.css.map */
