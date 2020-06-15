@@ -1,3 +1,16 @@
+.jumbotron {
+  border-bottom: 2px solid #000;
+}
+
+.jumbotron h1 {
+  font-size: 7rem;
+}
+
+.jumbotron h1 span {
+  font-family: serif;
+  font-weight: 400;
+}
+
 nav {
   padding: 25px 100px;
   border-bottom: 2px solid #000;
