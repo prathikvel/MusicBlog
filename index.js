@@ -22,6 +22,10 @@ app.get("/blog", async (req, res) => {
     let posts = await Post.find({});
     res.render("index", {posts: posts});
 });
+app.get("/blog/:id", async (req, res) => {
+    let post = await Post.findById(req.params.id);
+    res.render("show", {post: post});
+});
 
 // SERVER
 app.listen(3000, () => console.log("server started"));
