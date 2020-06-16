@@ -7,9 +7,15 @@
     <section class="featured">
         <h1>Featured</h1>
         <div class="layout">
-            <div class="main"></div>
-            <div class="side-top"></div>
-            <div class="side-bottom"></div>
+            <div class="main" style="background-image: url('<%= featured.main.image %>')">
+                <p><%= featured.main.title %></p>
+            </div>
+            <div class="side-top" style="background-image: url('<%= featured.sideTop.image %>')">
+                <p><%= featured.sideTop.title %></p>
+            </div>
+            <div class="side-bottom" style="background-image: url('<%= featured.sideBottom.image %>')">
+                <p><%= featured.sideBottom.title %></p>
+            </div>
         </div>
     </section>
     <hr>

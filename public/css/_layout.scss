@@ -4,11 +4,16 @@ section {
     &.featured .layout {        
         display: grid;
         grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, 250px);
         grid-gap: 1rem;
         grid-template-areas:
             "main main side-top"
             "main main side-bottom";
         
+        div {
+            background: no-repeat center center;
+            background-size: cover;
+        }
         .main {
             grid-area: main;
         }

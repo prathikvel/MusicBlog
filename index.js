@@ -3,7 +3,7 @@ const express = require("express"),
     mongoose = require("mongoose");
 
 // MODELS
-const Post = require("./models/post");
+const Models = require("./models/");
 const seedDB = require("./seedDB");
 
 // CONFIG
@@ -18,11 +18,16 @@ seedDB();
 
 // ROUTES
 app.get("/", async (req, res) => {
-    let posts = await Post.find({});
-    res.render("home", {posts: posts});
+    let posts = await Models.Post.find({});
+    let featured = {
+        main: await Models.Post.findOne({featured: "main"}),
+        sideTop: await Models.Post.findOne({featured: "sideTop"}),
+        sideBottom: await Models.Post.findOne({featured: "sideBottom"})
+    };
+    res.render("home", {posts: posts, featured: featured});
 });
 app.get("/blog/:id", async (req, res) => {
-    let post = await Post.findById(req.params.id);
+    let post = await Models.Post.findById(req.params.id);
     res.render("show", {post: post});
 });
 

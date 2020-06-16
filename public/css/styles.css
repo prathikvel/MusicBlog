@@ -119,8 +119,15 @@ section.featured .layout {
   display: grid;
   -ms-grid-columns: (auto)[3];
       grid-template-columns: repeat(3, auto);
+  -ms-grid-rows: (250px)[2];
+      grid-template-rows: repeat(2, 250px);
   grid-gap: 1rem;
       grid-template-areas: "main main side-top" "main main side-bottom";
+}
+
+section.featured .layout div {
+  background: no-repeat center center;
+  background-size: cover;
 }
 
 section.featured .layout .main {
