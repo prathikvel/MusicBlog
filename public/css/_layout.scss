@@ -1,8 +1,27 @@
 section {
-    margin: 0 100px;
-
+    margin: 100px;
+    
+    &.featured {        
+        .layout {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-gap: 1rem;
+            grid-template-areas:
+                "main main side-top"
+                "main main side-bottom";
+            
+            .main {
+                grid-area: main;
+            }
+            .side-top {
+                grid-area: side-top;
+            }
+            .side-bottom {
+                grid-area: side-bottom;
+            }
+        }
+    }
     &.cards {
-        margin-top: 100px;
         display: grid;
         grid-template-columns: repeat(3, auto);
         grid-gap: 1.25rem 3rem;
@@ -13,5 +32,8 @@ section {
         @media (max-width: 600px) {
             grid-template-columns: repeat(1, auto);
         }
+    }
+    &.show {
+        margin: 0 250px;
     }
 }

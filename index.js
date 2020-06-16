@@ -17,10 +17,9 @@ mongoose.connect('mongodb://localhost/koushik', {
 seedDB();
 
 // ROUTES
-app.get("/", (req, res) => res.redirect("/blog"));
-app.get("/blog", async (req, res) => {
+app.get("/", async (req, res) => {
     let posts = await Post.find({});
-    res.render("index", {posts: posts});
+    res.render("home", {posts: posts});
 });
 app.get("/blog/:id", async (req, res) => {
     let post = await Post.findById(req.params.id);

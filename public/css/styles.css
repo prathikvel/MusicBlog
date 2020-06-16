@@ -1,10 +1,10 @@
 .button {
   height: 2.5rem;
-  color: #fff;
+  color: #65CCB8;
   font-size: 1rem;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  background-color: #000;
+  background-color: #182628;
   border: none;
   border-radius: 1.25rem;
   cursor: pointer;
@@ -33,17 +33,9 @@
   line-height: 1.5rem;
 }
 
-.jumbotron h1 {
-  font-size: 7rem;
-}
-
-.jumbotron h1 span {
-  font-family: serif;
-  font-weight: 400;
-}
-
 nav {
-  margin: 25px 100px;
+  padding: 25px 100px;
+  background-color: #182628;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,7 +48,7 @@ nav {
 }
 
 nav a {
-  color: #000;
+  color: #65CCB8;
   text-decoration: none;
 }
 
@@ -82,37 +74,76 @@ nav ul li:last-child {
   margin-right: 0;
 }
 
-.show {
-  margin: 0 250px;
+section.jumbotron h1 {
+  font-size: 7rem;
+  margin: 3rem 0;
 }
 
-.show h1 {
+section.jumbotron h2 {
+  font-size: 3rem;
+}
+
+section.featured h1 {
+  font-size: 5rem;
+}
+
+section.show h1 {
   font-family: serif;
   font-size: 5rem;
   text-align: center;
 }
 
-.show img {
+section.show img {
   margin: 0 auto;
   display: block;
 }
 
-.show p {
+section.show p {
   font-size: 1.5rem;
   line-height: 2.5rem;
 }
 
 body {
+  color: #f2f2f2;
   font-family: sans-serif;
+  background-color: #65CCB8;
   margin: 0;
 }
 
 section {
-  margin: 0 100px;
+  margin: 100px;
+}
+
+section.featured .layout {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  grid-gap: 1rem;
+      grid-template-areas: "main main side-top" "main main side-bottom";
+}
+
+section.featured .layout .main {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: main;
+}
+
+section.featured .layout .side-top {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: side-top;
+}
+
+section.featured .layout .side-bottom {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: side-bottom;
 }
 
 section.cards {
-  margin-top: 100px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (auto)[3];
@@ -132,5 +163,9 @@ section.cards {
     -ms-grid-columns: (auto)[1];
         grid-template-columns: repeat(1, auto);
   }
+}
+
+section.show {
+  margin: 0 250px;
 }
 /*# sourceMappingURL=styles.css.map */
