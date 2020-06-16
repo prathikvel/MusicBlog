@@ -1,27 +1,25 @@
 section {
     margin: 100px;
     
-    &.featured {        
-        .layout {
-            display: grid;
-            grid-template-columns: repeat(3, auto);
-            grid-gap: 1rem;
-            grid-template-areas:
-                "main main side-top"
-                "main main side-bottom";
-            
-            .main {
-                grid-area: main;
-            }
-            .side-top {
-                grid-area: side-top;
-            }
-            .side-bottom {
-                grid-area: side-bottom;
-            }
+    &.featured .layout {        
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-gap: 1rem;
+        grid-template-areas:
+            "main main side-top"
+            "main main side-bottom";
+        
+        .main {
+            grid-area: main;
+        }
+        .side-top {
+            grid-area: side-top;
+        }
+        .side-bottom {
+            grid-area: side-bottom;
         }
     }
-    &.cards {
+    &.cards .layout {
         display: grid;
         grid-template-columns: repeat(3, auto);
         grid-gap: 1.25rem 3rem;

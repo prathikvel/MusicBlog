@@ -83,7 +83,7 @@ section.jumbotron h2 {
   font-size: 3rem;
 }
 
-section.featured h1 {
+section.featured h1, section.cards h1 {
   font-size: 5rem;
 }
 
@@ -143,7 +143,7 @@ section.featured .layout .side-bottom {
   grid-area: side-bottom;
 }
 
-section.cards {
+section.cards .layout {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (auto)[3];
@@ -152,14 +152,14 @@ section.cards {
 }
 
 @media (max-width: 1000px) {
-  section.cards {
+  section.cards .layout {
     -ms-grid-columns: (auto)[2];
         grid-template-columns: repeat(2, auto);
   }
 }
 
 @media (max-width: 600px) {
-  section.cards {
+  section.cards .layout {
     -ms-grid-columns: (auto)[1];
         grid-template-columns: repeat(1, auto);
   }
