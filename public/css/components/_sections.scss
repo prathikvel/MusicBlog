@@ -1,16 +1,17 @@
 section {
     &.jumbotron {
         h1 {
-            font-size: 7rem;
+            font-size: 4rem;
             margin: 3rem 0;
         }
         h2 {
-            font-size: 3rem;
+            font-size: 2rem;
         }
     }
     &.featured, &.cards {
         h1 {
-            font-size: 5rem;
+            font-size: 4rem;
+            text-align: center;
         }
     }
     &.show {

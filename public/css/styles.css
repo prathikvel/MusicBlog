@@ -1,6 +1,6 @@
 .button {
   height: 2.5rem;
-  color: #65CCB8;
+  color: #f2f2f2;
   font-size: 1rem;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -34,7 +34,7 @@
 }
 
 nav {
-  padding: 15px 100px;
+  padding: 5px 100px;
   background-color: #182628;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -48,13 +48,14 @@ nav {
 }
 
 nav a {
-  color: #65CCB8;
+  color: #f2f2f2;
   text-decoration: none;
 }
 
 nav a.logo {
   font-size: 2.5rem;
   font-weight: 700;
+  color: #65CCB8;
 }
 
 nav ul {
@@ -65,7 +66,7 @@ nav ul {
 }
 
 nav ul li {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-right: 1.25rem;
   float: left;
 }
@@ -75,16 +76,17 @@ nav ul li:last-child {
 }
 
 section.jumbotron h1 {
-  font-size: 7rem;
+  font-size: 4rem;
   margin: 3rem 0;
 }
 
 section.jumbotron h2 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 section.featured h1, section.cards h1 {
-  font-size: 5rem;
+  font-size: 4rem;
+  text-align: center;
 }
 
 section.show h1 {

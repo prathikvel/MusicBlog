@@ -1,7 +1,7 @@
 <%- include("partials/header") %>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <section class="jumbotron">
-        <h1>One stop for all things music</h1>
-        <h2>Check out our {insert keywords here with typed.js}</h2>
+        <h1 id="typed"></h1>
     </section>
     <hr>
     <section class="featured">
@@ -34,4 +34,15 @@
             <% } %>
         </div>
     </section>
+
+    <script>
+        var typed = new Typed('#typed', { 
+            strings: ["One stop for all things music"],
+            typeSpeed: 30,
+            backSpeed: 40,
+            startDelay: 200,
+            smartBackspace: true,
+            loop: false,
+            showCursor: false});
+    </script>
 <%- include("partials/footer") %>
