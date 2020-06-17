@@ -19,12 +19,12 @@ seedDB();
 // ROUTES
 app.get("/", async (req, res) => {
     let posts = await Models.Post.find({});
-    let featured = {
-        main: await Models.Post.findOne({featured: "main"}),
-        sideTop: await Models.Post.findOne({featured: "sideTop"}),
-        sideBottom: await Models.Post.findOne({featured: "sideBottom"})
+    let features = {
+        main: await Models.Post.findOne({feature: "main"}),
+        sideTop: await Models.Post.findOne({feature: "sideTop"}),
+        sideBottom: await Models.Post.findOne({feature: "sideBottom"})
     };
-    res.render("home", {posts: posts, featured: featured});
+    res.render("home", {posts: posts, features: features});
 });
 app.get("/blog/:id", async (req, res) => {
     let post = await Models.Post.findById(req.params.id);

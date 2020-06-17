@@ -1,27 +1,27 @@
 section {
-    margin: 100px;
+    margin: 50px 100px;
     
-    &.featured .layout {        
+    &.features .layout {        
         display: grid;
         grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(2, 250px);
         grid-gap: 1rem;
         grid-template-areas:
-            "main main side-top"
-            "main main side-bottom";
+            "main main sideTop"
+            "main main sideBottom";
         
-        div {
+        a {
             background: no-repeat center center;
             background-size: cover;
         }
         .main {
             grid-area: main;
         }
-        .side-top {
-            grid-area: side-top;
+        .sideTop {
+            grid-area: sideTop;
         }
-        .side-bottom {
-            grid-area: side-bottom;
+        .sideBottom {
+            grid-area: sideBottom;
         }
     }
     &.cards .layout {

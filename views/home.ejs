@@ -1,21 +1,15 @@
 <%- include("partials/header") %>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-    <section class="jumbotron">
-        <h1 id="typed"></h1>
-    </section>
-    <hr>
-    <section class="featured">
+    <div class="tagline">
+        <p id="typed"></p>
+    </div>
+    <section class="features">
         <h1>FEATURED</h1>
         <div class="layout">
-            <div class="main" style="background-image: url('<%= featured.main.image %>')">
-                <p><%= featured.main.title %></p>
-            </div>
-            <div class="side-top" style="background-image: url('<%= featured.sideTop.image %>')">
-                <p><%= featured.sideTop.title %></p>
-            </div>
-            <div class="side-bottom" style="background-image: url('<%= featured.sideBottom.image %>')">
-                <p><%= featured.sideBottom.title %></p>
-            </div>
+            <% for (const [feature, post] of Object.entries(features)) { %>
+            <a class="<%= feature %>" style="background-image: url('<%= post.image %>')" href="/blog/<%= post._id %>">
+                <h2><%= post.title %></h2>
+            </a>
+            <% } %>
         </div>
     </section>
     <hr>
@@ -34,15 +28,4 @@
             <% } %>
         </div>
     </section>
-
-    <script>
-        var typed = new Typed('#typed', { 
-            strings: ["One stop for all things music"],
-            typeSpeed: 30,
-            backSpeed: 40,
-            startDelay: 200,
-            smartBackspace: true,
-            loop: false,
-            showCursor: false});
-    </script>
 <%- include("partials/footer") %>

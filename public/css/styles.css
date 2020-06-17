@@ -75,24 +75,29 @@ nav ul li:last-child {
   margin-right: 0;
 }
 
-section.jumbotron h1 {
+section h1 {
   font-size: 4rem;
-  margin: 3rem 0;
+  text-align: center;
 }
 
-section.jumbotron h2 {
+section h2 {
   font-size: 2rem;
 }
 
-section.featured h1, section.cards h1 {
-  font-size: 4rem;
-  text-align: center;
+section.features .layout a {
+  color: #f2f2f2;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section.features .layout a h2 {
+  margin: auto 0 25px 25px;
 }
 
 section.show h1 {
   font-family: serif;
-  font-size: 5rem;
-  text-align: center;
 }
 
 section.show img {
@@ -105,6 +110,17 @@ section.show p {
   line-height: 2.5rem;
 }
 
+.tagline {
+  padding: 10px 0;
+  background-color: #182628;
+}
+
+.tagline p {
+  color: #65CCB8;
+  text-align: center;
+  margin: 0;
+}
+
 body {
   color: #f2f2f2;
   font-family: sans-serif;
@@ -113,10 +129,10 @@ body {
 }
 
 section {
-  margin: 100px;
+  margin: 50px 100px;
 }
 
-section.featured .layout {
+section.features .layout {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (auto)[3];
@@ -124,15 +140,15 @@ section.featured .layout {
   -ms-grid-rows: (250px)[2];
       grid-template-rows: repeat(2, 250px);
   grid-gap: 1rem;
-      grid-template-areas: "main main side-top" "main main side-bottom";
+      grid-template-areas: "main main sideTop" "main main sideBottom";
 }
 
-section.featured .layout div {
+section.features .layout a {
   background: no-repeat center center;
   background-size: cover;
 }
 
-section.featured .layout .main {
+section.features .layout .main {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
@@ -140,16 +156,16 @@ section.featured .layout .main {
   grid-area: main;
 }
 
-section.featured .layout .side-top {
+section.features .layout .sideTop {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
-  grid-area: side-top;
+  grid-area: sideTop;
 }
 
-section.featured .layout .side-bottom {
+section.features .layout .sideBottom {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
-  grid-area: side-bottom;
+  grid-area: sideBottom;
 }
 
 section.cards .layout {
