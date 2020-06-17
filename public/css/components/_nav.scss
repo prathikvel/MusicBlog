@@ -1,17 +1,18 @@
 nav {
-    padding: 15px 100px;
+    padding: 5px 100px;
     background-color: $accent-background-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     a {
-        color: $accent-text-color;
+        color: $text-color;
         text-decoration: none;
 
         &.logo {
             font-size: 2.5rem;
             font-weight: 700;
+            color: $accent-text-color;
         }
     }
     ul {
@@ -19,7 +20,7 @@ nav {
         display: flex;
 
         li {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-right: 1.25rem;
             float: left;
 
