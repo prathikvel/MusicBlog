@@ -1,9 +1,7 @@
 <%- include("partials/header") %>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-    <section class="jumbotron">
-        <h1 id="typed"></h1>
-    </section>
-    <hr>
+    <div class="tagline">
+        <p id="typed"></p>
+    </div>
     <section class="features">
         <h1>FEATURED</h1>
         <div class="layout">
@@ -30,15 +28,4 @@
             <% } %>
         </div>
     </section>
-
-    <script>
-        var typed = new Typed('#typed', { 
-            strings: ["One stop for all things music"],
-            typeSpeed: 30,
-            backSpeed: 40,
-            startDelay: 200,
-            smartBackspace: true,
-            loop: false,
-            showCursor: false});
-    </script>
 <%- include("partials/footer") %>
