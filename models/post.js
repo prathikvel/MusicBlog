@@ -8,7 +8,7 @@ const postSchema = new mongoose.Schema({
     date: { type: Date, default: Date.now },
     image: String,
     body: String,
-    featured: String
+    feature: String
 });
 
 // EXPORT

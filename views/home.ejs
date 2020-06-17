@@ -4,18 +4,14 @@
         <h2>Check out our {insert keywords here with typed.js}</h2>
     </section>
     <hr>
-    <section class="featured">
+    <section class="features">
         <h1>FEATURED</h1>
         <div class="layout">
-            <div class="main" style="background-image: url('<%= featured.main.image %>')">
-                <p><%= featured.main.title %></p>
-            </div>
-            <div class="side-top" style="background-image: url('<%= featured.sideTop.image %>')">
-                <p><%= featured.sideTop.title %></p>
-            </div>
-            <div class="side-bottom" style="background-image: url('<%= featured.sideBottom.image %>')">
-                <p><%= featured.sideBottom.title %></p>
-            </div>
+            <% for (const [feature, post] of Object.entries(features)) { %>
+            <a class="<%= feature %>" style="background-image: url('<%= post.image %>')" href="/blog/<%= post._id %>">
+                <h2><%= post.title %></h2>
+            </a>
+            <% } %>
         </div>
     </section>
     <hr>

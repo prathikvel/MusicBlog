@@ -1,4 +1,8 @@
 section {
+    h1 {
+        font-size: 5rem;
+    }
+
     &.jumbotron {
         h1 {
             font-size: 7rem;
@@ -8,15 +12,19 @@ section {
             font-size: 3rem;
         }
     }
-    &.featured, &.cards {
-        h1 {
-            font-size: 5rem;
+    &.features .layout a {
+        color: $text-color;
+        text-decoration: none;
+        display: flex;
+
+        h2 {
+            font-size: 2rem;
+            margin: auto 0 25px 25px;
         }
     }
     &.show {
         h1 {
             font-family: serif;
-            font-size: 5rem;
             text-align: center;
         }
         img {
