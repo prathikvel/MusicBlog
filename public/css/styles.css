@@ -110,17 +110,6 @@ section.show p {
   line-height: 2.5rem;
 }
 
-.tagline {
-  padding: 10px 0;
-  background-color: #182628;
-}
-
-.tagline p {
-  color: #65CCB8;
-  text-align: center;
-  margin: 0;
-}
-
 body {
   color: #f2f2f2;
   font-family: sans-serif;
