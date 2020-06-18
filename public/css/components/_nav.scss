@@ -1,24 +1,27 @@
 nav {
     width: 100%;
-    padding: 35px 0 10px 0;
+    padding: 45px 0 15px 0;
     background-color: $accent-background-color;
     box-sizing: border-box;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    filter: drop-shadow(1px 3px 4px $accent-background-color);
 
     &.fixed {
-        padding: 15px 100px;
+        padding: 2px 50px;
         position: fixed;
         top: 0;
         flex-flow: row wrap;
         justify-content: space-between;
         z-index: 1;
+        opacity: 1;
         transition: transform 0.3s;
 
         &.hide {
             transform: translateY(-100%);
-            visibility: hidden;
+            pointer-events: none;
+            opacity: 0;
         }
     }
 
@@ -27,7 +30,7 @@ nav {
         text-decoration: none;
 
         &.logo {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
         }
     }
@@ -36,7 +39,7 @@ nav {
         display: flex;
 
         li {
-            font-size: 1.2rem;
+            font-size: 1.0rem;
             margin-right: 1.5rem;
 
             &:last-child {

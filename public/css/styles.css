@@ -52,7 +52,7 @@
 
 nav {
   width: 100%;
-  padding: 35px 0 10px 0;
+  padding: 45px 0 15px 0;
   background-color: #182628;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -66,10 +66,12 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-filter: drop-shadow(1px 3px 4px #182628);
+          filter: drop-shadow(1px 3px 4px #182628);
 }
 
 nav.fixed {
-  padding: 15px 100px;
+  padding: 2px 50px;
   position: fixed;
   top: 0;
   -webkit-box-orient: horizontal;
@@ -80,6 +82,7 @@ nav.fixed {
       -ms-flex-pack: justify;
           justify-content: space-between;
   z-index: 1;
+  opacity: 1;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
@@ -89,7 +92,8 @@ nav.fixed {
 nav.fixed.hide {
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
-  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
 }
 
 nav a {
@@ -98,7 +102,7 @@ nav a {
 }
 
 nav a.logo {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
 }
 
@@ -110,7 +114,7 @@ nav ul {
 }
 
 nav ul li {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   margin-right: 1.5rem;
 }
 
@@ -136,7 +140,9 @@ section.features .layout .side-a, section .side-b {
 }
 
 section.features .layout .side-a:hover, section .side-b:hover {
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #182628;
+  -webkit-box-shadow: 0 4px 2px -2px gray;
+          box-shadow: 0 4px 2px -2px gray;
 }
 
 section.cards h1 {
