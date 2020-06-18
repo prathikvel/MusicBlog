@@ -1,5 +1,6 @@
 // PACKAGES
 const express = require("express"),
+    moment = require("moment"),
     mongoose = require("mongoose");
 
 // MODELS
@@ -19,12 +20,12 @@ seedDB();
 // ROUTES
 app.get("/", async (req, res) => {
     let posts = await Models.Post.find({});
-    let features = {
-        main: await Models.Post.findOne({feature: "main"}),
-        sideTop: await Models.Post.findOne({feature: "sideTop"}),
-        sideBottom: await Models.Post.findOne({feature: "sideBottom"})
-    };
-    res.render("home", {posts: posts, features: features});
+    let features = [
+        await Models.Post.findOne({feature: "main"}),
+        await Models.Post.findOne({feature: "side-a"}),
+        await Models.Post.findOne({feature: "side-b"})
+    ];
+    res.render("home", {posts: posts, features: features, moment: moment});
 });
 app.get("/blog/:id", async (req, res) => {
     let post = await Models.Post.findById(req.params.id);

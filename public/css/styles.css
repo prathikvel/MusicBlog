@@ -1,6 +1,6 @@
 .button {
   height: 2.5rem;
-  color: #f2f2f2;
+  color: #000;
   font-size: 1rem;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -11,51 +11,68 @@
 }
 
 .card {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 250px auto auto;
-      grid-template-rows: 250px auto auto;
+  width: 100%;
+  background-color: #F2F2F2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
 .card img {
   width: 100%;
-  max-height: 250px;
+  min-height: 200px;
+  max-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.card h2 {
-  font-family: serif;
-  font-size: 3rem;
-  font-weight: 400;
-  margin: 0;
+.card .content {
+  height: 100%;
+  margin: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
-.card p {
+.card .content p {
   line-height: 1.5rem;
 }
 
+.card .content .footer {
+  margin-top: auto;
+}
+
 nav {
-  padding: 5px 100px;
+  padding: 35px 0 10px 0;
   background-color: #182628;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 nav a {
-  color: #f2f2f2;
+  color: #65CCB8;
   text-decoration: none;
 }
 
 nav a.logo {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #65CCB8;
 }
 
 nav ul {
@@ -67,16 +84,14 @@ nav ul {
 
 nav ul li {
   font-size: 1.2rem;
-  margin-right: 1.25rem;
-  float: left;
+  margin-right: 1.5rem;
 }
 
 nav ul li:last-child {
   margin-right: 0;
 }
 
-section h1 {
-  font-size: 4rem;
+section {
   text-align: center;
 }
 
@@ -84,20 +99,38 @@ section h2 {
   font-size: 2rem;
 }
 
-section.features .layout a {
-  color: #f2f2f2;
+section a {
+  color: #000;
   text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
-section.features .layout a h2 {
-  margin: auto 0 25px 25px;
+section.features .layout .side-a, section .side-b {
+  border-bottom: 2px solid transparent;
 }
 
-section.show h1 {
-  font-family: serif;
+section.features .layout .side-a:hover, section .side-b:hover {
+  border-bottom: 2px solid #000;
+}
+
+section.cards h1 {
+  text-transform: uppercase;
+  width: 200px;
+  height: 40px;
+  margin: 40px auto;
+  position: relative;
+}
+
+section.cards h1:before {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+  width: 50%;
+  border-bottom: 3px solid #000;
+}
+
+section.cards .layout .card .content .body a:hover {
+  color: #65CCB8;
 }
 
 section.show img {
@@ -111,7 +144,7 @@ section.show p {
 }
 
 body {
-  color: #f2f2f2;
+  color: #000;
   font-family: sans-serif;
   background-color: #65CCB8;
   margin: 0;
@@ -124,37 +157,75 @@ section {
 section.features .layout {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (auto)[3];
-      grid-template-columns: repeat(3, auto);
-  -ms-grid-rows: (250px)[2];
-      grid-template-rows: repeat(2, 250px);
+  -ms-grid-columns: (25%)[2] (auto)[2];
+      grid-template-columns: repeat(2, 25%) repeat(2, auto);
+  -ms-grid-rows: 400px;
+      grid-template-rows: 400px;
   grid-gap: 1rem;
-      grid-template-areas: "main main sideTop" "main main sideBottom";
-}
-
-section.features .layout a {
-  background: no-repeat center center;
-  background-size: cover;
+      grid-template-areas: "main main side-a side-b";
 }
 
 section.features .layout .main {
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: main;
 }
 
-section.features .layout .sideTop {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-  grid-area: sideTop;
+@media (min-width: 600px) {
+  section.features .layout .main {
+    color: #F2F2F2;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.features .layout .main:hover .content .body {
+    text-decoration: underline;
+  }
+  section.features .layout .main img {
+    min-height: 100%;
+    max-height: 100%;
+    -webkit-filter: brightness(75%);
+            filter: brightness(75%);
+  }
+  section.features .layout .main .content {
+    height: auto;
+    margin-top: 100px;
+    position: absolute;
+  }
 }
 
-section.features .layout .sideBottom {
-  -ms-grid-row: 2;
+section.features .layout .side-a {
+  -ms-grid-row: 1;
   -ms-grid-column: 3;
-  grid-area: sideBottom;
+  grid-area: side-a;
+}
+
+section.features .layout .side-b {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: side-b;
+}
+
+@media (max-width: 1000px) {
+  section.features .layout {
+    -ms-grid-columns: (auto)[2];
+        grid-template-columns: repeat(2, auto);
+        grid-template-areas: "main main" "side-a side-b";
+  }
+}
+
+@media (max-width: 600px) {
+  section.features .layout {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "main" "side-a" "side-b";
+  }
 }
 
 section.cards .layout {
@@ -162,7 +233,7 @@ section.cards .layout {
   display: grid;
   -ms-grid-columns: (auto)[3];
       grid-template-columns: repeat(3, auto);
-  grid-gap: 1.25rem 3rem;
+  grid-gap: 1rem;
 }
 
 @media (max-width: 1000px) {
@@ -174,8 +245,8 @@ section.cards .layout {
 
 @media (max-width: 600px) {
   section.cards .layout {
-    -ms-grid-columns: (auto)[1];
-        grid-template-columns: repeat(1, auto);
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
   }
 }
 

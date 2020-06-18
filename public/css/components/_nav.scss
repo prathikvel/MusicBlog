@@ -1,18 +1,17 @@
 nav {
-    padding: 5px 100px;
+    padding: 35px 0 10px 0;
     background-color: $accent-background-color;
     display: flex;
-    justify-content: space-between;
+    flex-flow: column nowrap;
     align-items: center;
 
     a {
-        color: $text-color;
+        color: $accent-text-color;
         text-decoration: none;
 
         &.logo {
             font-size: 2.5rem;
             font-weight: 700;
-            color: $accent-text-color;
         }
     }
     ul {
@@ -21,8 +20,7 @@ nav {
 
         li {
             font-size: 1.2rem;
-            margin-right: 1.25rem;
-            float: left;
+            margin-right: 1.5rem;
 
             &:last-child {
                 margin-right: 0;

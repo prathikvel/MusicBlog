@@ -1,25 +1,35 @@
 <%- include("partials/header") %>
     <section class="features">
-        <h1>FEATURED</h1>
         <div class="layout">
-            <% for (const [feature, post] of Object.entries(features)) { %>
-            <a class="<%= feature %>" style="background-image: url('<%= post.image %>')" href="/blog/<%= post._id %>">
-                <h2><%= post.title %></h2>
+            <% for (const post of features) { %>
+            <a class="<%= post.feature %> card" href="/blog/<%= post._id %>">
+                <img src="<%= post.image %>">
+                <div class="content">
+                    <div class="body">
+                        <h2><%= post.title %></h2>
+                    </div>
+                    <div class="footer">
+                        <p><%= moment(post.date).fromNow() %></p>
+                    </div>
+                </div>
             </a>
             <% } %>
         </div>
     </section>
-    <hr>
     <section class="cards">
-        <h1>LATEST</h1>
+        <h1>The Latest</h1>
         <div class="layout">
             <% for (const post of posts) { %>
             <div class="card">
-                <img src="<%= post.image %>">
-                <div class="card-body">
-                    <h2><%= post.title %></h2>
-                    <p><%= post.body %></p>
-                    <a class="button" href="/blog/<%= post._id %>">read more</a>
+                <a href="/blog/<%= post._id %>"><img src="<%= post.image %>"></a>
+                <div class="content">
+                    <div class="body">
+                        <a href="/blog/<%= post._id %>"><h2><%= post.title %></h2></a>
+                        <p><%= post.body.substring(0,100) %></p>
+                    </div>
+                    <div class="footer">
+                        <p><%= moment(post.date).fromNow() %></p>
+                    </div>
                 </div>
             </div>
             <% } %>
