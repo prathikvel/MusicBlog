@@ -51,8 +51,11 @@
 }
 
 nav {
+  width: 100%;
   padding: 35px 0 10px 0;
   background-color: #182628;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,6 +66,30 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+nav.fixed {
+  padding: 15px 100px;
+  position: fixed;
+  top: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 1;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+nav.fixed.hide {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  visibility: hidden;
 }
 
 nav a {
