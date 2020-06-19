@@ -2,11 +2,19 @@
     <section class="features">
         <div class="layout">
             <% for (const post of features) { %>
-            <a class="<%= post.feature %> card" href="/blog/<%= post._id %>">
+            <a class="<%= Object.keys(post.feature.toJSON()).find(key => post.feature[key] === true) %> card" href="/blog/<%= post._id %>">
                 <img src="<%= post.image %>">
                 <div class="content">
                     <div class="body">
-                        <h2><%= post.title %></h2>
+                        <h2>
+                            <% if (post.title) { %>
+                                <%= post.title %>
+                            <% } else if (post.metadata.track) { %>
+                                <%= post.metadata.track %>
+                            <% } else if (post.metadata.album) { %>
+                                <%= post.metadata.album %>
+                            <% } %>
+                        </h2>
                     </div>
                     <div class="footer">
                         <p><%= moment(post.date).fromNow() %></p>
@@ -24,8 +32,16 @@
                 <a href="/blog/<%= post._id %>"><img src="<%= post.image %>"></a>
                 <div class="content">
                     <div class="body">
-                        <a href="/blog/<%= post._id %>"><h2><%= post.title %></h2></a>
-                        <p><%= post.body.substring(0,100) %></p>
+                        <a href="/blog/<%= post._id %>"><h2>
+                            <% if (post.title) { %>
+                                <%= post.title %>
+                            <% } else if (post.metadata.track) { %>
+                                <%= post.metadata.track %>
+                            <% } else if (post.metadata.album) { %>
+                                <%= post.metadata.album %>
+                            <% } %>
+                        </h2></a>
+                        <p><%= post.description %></p>
                     </div>
                     <div class="footer">
                         <p><%= moment(post.date).fromNow() %></p>

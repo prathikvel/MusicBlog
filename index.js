@@ -1,10 +1,11 @@
 // PACKAGES
-const express = require("express"),
+const colorThief = require("colorthief"),
+    express = require("express"),
     moment = require("moment"),
     mongoose = require("mongoose");
 
 // MODELS
-const Models = require("./models/");
+const Models = require("./models");
 const seedDB = require("./seedDB");
 
 // CONFIG
@@ -21,15 +22,16 @@ seedDB();
 app.get("/", async (req, res) => {
     let posts = await Models.Post.find({});
     let features = [
-        await Models.Post.findOne({feature: "main"}),
-        await Models.Post.findOne({feature: "side-a"}),
-        await Models.Post.findOne({feature: "side-b"})
+        await Models.Post.findOne({"feature.main": true}),
+        await Models.Post.findOne({"feature.side-a": true}),
+        await Models.Post.findOne({"feature.side-b": true})
     ];
     res.render("home", {posts: posts, features: features, moment: moment});
 });
 app.get("/blog/:id", async (req, res) => {
     let post = await Models.Post.findById(req.params.id);
-    res.render("show", {post: post});
+    let stripBackgroundColor = await colorThief.getColor(post.image);
+    res.render("show", {post: post, stripBackgroundColor: stripBackgroundColor});
 });
 
 // SERVER
