@@ -21,7 +21,7 @@ seedDB();
 // MIDDLEWARE
 function localVariables (req, res, next) {
     res.locals.moment = moment;
-    next()
+    next();
 }
 app.use(localVariables);
 
