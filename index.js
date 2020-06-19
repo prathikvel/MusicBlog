@@ -18,6 +18,13 @@ mongoose.connect('mongodb://localhost/koushik', {
 });
 seedDB();
 
+// MIDDLEWARE
+function localVariables (req, res, next) {
+    res.locals.path = req.path;
+    next();
+}
+app.use(localVariables);
+
 // ROUTES
 app.get("/", async (req, res) => {
     let posts = await Models.Post.find({});

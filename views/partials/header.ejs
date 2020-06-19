@@ -10,6 +10,7 @@
     <script src="/js/lib/jquery-3.5.1.min.js"></script>
 </head>
 <body>
+    <% if (path === "/") { %>
     <nav>
         <a class="logo" href="#">logo</a>
         <ul>
@@ -19,7 +20,8 @@
             <li><a href="#">Support</a></li>
         </ul>
     </nav>
-    <nav class="fixed hide">
+    <% } %>
+    <nav class="fixed <%= (path === "/") ? "hide" : "" %>">
         <a class="logo" href="#">logo</a>
         <ul>
             <li><a href="#">Albums</a></li>
