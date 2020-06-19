@@ -5,14 +5,14 @@
             <a class="<%= Object.keys(post.feature.toJSON()).find(key => post.feature[key] === true) %> card" href="/blog/<%= post._id %>">
                 <img src="<%= post.image %>">
                 <div class="content">
-                    <div class="body">
+                    <header>
                         <h2>
                             <%= (post.title) ? post.title : ((post.metadata.track) ? post.metadata.track : post.metadata.album) %>
                         </h2>
-                    </div>
-                    <div class="footer">
-                        <p><%= moment(post.date).fromNow() %></p>
-                    </div>
+                    </header>
+                    <footer>
+                        <p><time><%= moment(post.date).fromNow() %></time></p>
+                    </footer>
                 </div>
             </a>
             <% } %>
@@ -25,15 +25,15 @@
             <div class="card">
                 <a href="/blog/<%= post._id %>"><img src="<%= post.image %>"></a>
                 <div class="content">
-                    <div class="body">
+                    <header>
                         <a href="/blog/<%= post._id %>"><h2>
                             <%= (post.title) ? post.title : ((post.metadata.track) ? post.metadata.track : post.metadata.album) %>
                         </h2></a>
                         <p><%= post.description %></p>
-                    </div>
-                    <div class="footer">
-                        <p><%= moment(post.date).fromNow() %></p>
-                    </div>
+                    </header>
+                    <footer>
+                        <p><time><%= moment(post.date).fromNow() %></time></p>
+                    </footer>
                 </div>
             </div>
             <% } %>

@@ -11,7 +11,7 @@ function nav () {
 }
 
 function offsetShowImage () {
-    const showImage = $(".show .layout img");
+    const showImage = $("article .layout img");
     showImage.on("load", () => showImage.css("marginBottom", `-${showImage.height() / 3}px`));
     $(window).resize(() => showImage.css("marginBottom", `-${showImage.height() / 3}px`));
 }
