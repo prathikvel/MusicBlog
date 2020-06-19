@@ -1,65 +1,31 @@
-article .background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+section.cards h1 {
+  width: 200px;
+  height: 50px;
+  margin: 40px auto;
+  position: relative;
 }
 
-article .background img {
-  width: 100vw;
-  height: 50vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-filter: blur(0.25rem);
-          filter: blur(0.25rem);
+section.cards h1:before {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+  width: 50%;
+  border-bottom: 3px solid #000;
 }
 
-article .layout {
-  background-color: #F2F2F2;
+section.cards a:hover {
+  color: #65CCB8;
 }
 
-article .layout .strip {
-  width: 100%;
-  height: 100px;
+section.features .layout .side-a:hover, section.features .side-b:hover {
+  -webkit-box-shadow: 0 4px 2px -2px gray;
+          box-shadow: 0 4px 2px -2px gray;
 }
 
-article .layout .content {
-  padding: 0 50px 25px 50px;
-}
-
-article .layout .content img {
-  width: 25%;
-  margin: 0 auto;
-  display: block;
-  -webkit-transform: translateY(calc(-100% / 3));
-          transform: translateY(calc(-100% / 3));
-}
-
-article .layout .content h2 {
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-article .layout .content .genre {
-  color: #F2F2F2;
-  text-transform: uppercase;
-  padding: 10px;
-  background-color: #000;
-  border-radius: 1rem;
-  margin: 0 auto;
-  display: table;
-}
-
-.button {
-  height: 2.5rem;
+section a {
   color: #000;
-  font-size: 1rem;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  background-color: #182628;
-  border: none;
-  border-radius: 1.25rem;
-  cursor: pointer;
 }
 
 .card {
@@ -169,74 +135,6 @@ nav ul li {
 
 nav ul li:last-child {
   margin-right: 0;
-}
-
-section.cards h1 {
-  width: 200px;
-  height: 50px;
-  margin: 40px auto;
-  position: relative;
-}
-
-section.cards h1:before {
-  content: "";
-  position: absolute;
-  left: 25%;
-  bottom: 0;
-  width: 50%;
-  border-bottom: 3px solid #000;
-}
-
-section.cards a:hover {
-  color: #65CCB8;
-}
-
-section.features .layout .side-a:hover, section.features .side-b:hover {
-  -webkit-box-shadow: 0 4px 2px -2px gray;
-          box-shadow: 0 4px 2px -2px gray;
-}
-
-section a {
-  color: #000;
-  text-decoration: none;
-}
-
-body {
-  color: #000;
-  font-family: sans-serif;
-  background-color: #65CCB8;
-  margin: 0;
-}
-
-body h1 {
-  font-size: 2rem;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-body h2 {
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-body p {
-  line-height: 1.5rem;
-}
-
-article {
-  margin: 100px 200px 50px 200px;
-}
-
-@media (max-width: 1000px) {
-  article {
-    margin: 100px 50px 50px 50px;
-  }
-}
-
-@media (max-width: 600px) {
-  article {
-    margin: 100px 25px 25px 25px;
-  }
 }
 
 section.cards .layout {
@@ -350,4 +248,25 @@ section {
     margin: 25px;
   }
 }
-/*# sourceMappingURL=styles.css.map */
+
+body {
+  color: #000;
+  font-family: sans-serif;
+  background-color: #65CCB8;
+  margin: 0;
+}
+
+body h1 {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+body h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+body p {
+  line-height: 1.5rem;
+}

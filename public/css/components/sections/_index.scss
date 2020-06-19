@@ -1,9 +1,3 @@
 @import "cards";
 @import "features";
-
-section {
-    a {
-        color: $text-color;
-        text-decoration: none;
-    }
-}
+@import "section";

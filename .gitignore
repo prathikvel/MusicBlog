@@ -113,4 +113,7 @@ dist
 # Mac files
 .DS_Store
 
+# SASS files
+.css.map
+
 # End of https://www.toptal.com/developers/gitignore/api/node
