@@ -40,7 +40,7 @@ app.get("/blog/:id", async (req, res) => {
     const post = await Models.Post.findById(req.params.id);
     const stripBackgroundColor = await colorThief.getColor(post.image);
     const view = "show";
-    res.render("show", {view: view, post: post, stripBackgroundColor: stripBackgroundColor});
+    res.render(view, {view: view, post: post, stripBackgroundColor: stripBackgroundColor});
 });
 
 // SERVER
