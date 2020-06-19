@@ -7,13 +7,7 @@
                 <div class="content">
                     <div class="body">
                         <h2>
-                            <% if (post.title) { %>
-                                <%= post.title %>
-                            <% } else if (post.metadata.track) { %>
-                                <%= post.metadata.track %>
-                            <% } else if (post.metadata.album) { %>
-                                <%= post.metadata.album %>
-                            <% } %>
+                            <%= (post.title) ? post.title : ((post.metadata.track) ? post.metadata.track : post.metadata.album) %>
                         </h2>
                     </div>
                     <div class="footer">
@@ -33,13 +27,7 @@
                 <div class="content">
                     <div class="body">
                         <a href="/blog/<%= post._id %>"><h2>
-                            <% if (post.title) { %>
-                                <%= post.title %>
-                            <% } else if (post.metadata.track) { %>
-                                <%= post.metadata.track %>
-                            <% } else if (post.metadata.album) { %>
-                                <%= post.metadata.album %>
-                            <% } %>
+                            <%= (post.title) ? post.title : ((post.metadata.track) ? post.metadata.track : post.metadata.album) %>
                         </h2></a>
                         <p><%= post.description %></p>
                     </div>
