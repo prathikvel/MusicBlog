@@ -188,6 +188,7 @@ section.show .layout .content h2 {
 
 section.show .layout .content .genre {
   color: #F2F2F2;
+  text-transform: uppercase;
   padding: 10px;
   background-color: #000;
   border-radius: 1rem;
