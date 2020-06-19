@@ -1,0 +1,20 @@
+section.cards {
+    h1 {
+        width: 200px;
+        height: 50px;
+        margin: 40px auto;
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 25%;
+            bottom: 0;
+            width: 50%;
+            border-bottom: 3px solid $text-color;
+        }
+    }
+    a:hover {
+        color: $accent-text-color;
+    }
+}

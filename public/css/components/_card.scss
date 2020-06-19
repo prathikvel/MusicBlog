@@ -10,16 +10,13 @@
         max-height: 200px;
         object-fit: cover;
     }
-
     .content {
+        text-align: center;
         height: 100%;
-        margin: 0 1rem;
+        margin: 0 1.5rem;
         display: flex;
         flex-flow: column nowrap;
 
-        p {
-            line-height: 1.5rem;
-        }
         .footer {
             margin-top: auto;
         }

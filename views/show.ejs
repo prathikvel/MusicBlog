@@ -1,7 +1,21 @@
 <%- include("partials/header") %>
     <section class="show">
-        <h1><%= post.title %></h1>
-        <img src="<%= post.image %>">
-        <p><%= post.body %></p>
+        <div class="background">
+            <img src="<%= post.image %>">
+        </div>
+        <div class="layout">
+            <div class="strip" style="background-color: rgb(<%= stripBackgroundColor %>)"></div>
+            <div class="content">
+                <img src="<%= post.image %>">
+                <h1><%= (post.metadata) ? post.metadata.artist : post.title %></h1>
+                <% if (post.metadata) { %>
+                <h2><%= (post.metadata.track) ? post.metadata.track : post.metadata.album %></h2>
+                <div class="genre"><%= post.metadata.genre %></div>
+                <% } %>
+                <div class="body">
+                    <%- post.body %>
+                </div>
+            </div>
+        </div>
     </section>
 <%- include("partials/footer") %>
