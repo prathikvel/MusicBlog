@@ -3,7 +3,7 @@ section {
     
     &.features .layout {        
         display: grid;
-        grid-template-columns: repeat(2, 25%) repeat(2, auto);
+        grid-template-columns: repeat(2, 25%) repeat(2, 1fr);
         grid-template-rows: 400px;
         grid-gap: 1rem;
         grid-template-areas: "main main side-a side-b";
@@ -40,14 +40,14 @@ section {
         }
 
         @media (max-width: 1000px) {
-            grid-template-columns: repeat(2, auto);
+            grid-template-columns: repeat(2, 1fr);
             grid-template-areas:
                 "main main"
                 "side-a side-b";
         }
         @media (max-width: 600px) {
-            grid-template-columns: auto;
-            grid-template-rows: auto;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
             grid-template-areas:
                 "main"
                 "side-a"
@@ -56,17 +56,17 @@ section {
     }
     &.cards .layout {
         display: grid;
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 1rem;
 
         @media (max-width: 1000px) {
-            grid-template-columns: repeat(2, auto);
+            grid-template-columns: repeat(2, 1fr);
         }
         @media (max-width: 600px) {
-            grid-template-columns: auto;
+            grid-template-columns: 1fr;
         }
     }
-    &.show {
+    &.show .layout {
         margin: 0 250px;
     }
 }
