@@ -11,7 +11,10 @@
                         </h2>
                     </header>
                     <footer>
-                        <p><time><%= moment(post.date).fromNow() %></time></p>
+                        <p>
+                            <%= (post.metadata) ? `${post.metadata.genre} / ` : "" %>
+                            <time><%= moment(post.date).fromNow() %></time>
+                        </p>
                     </footer>
                 </div>
             </a>
@@ -32,7 +35,10 @@
                         <p><%= post.description %></p>
                     </header>
                     <footer>
-                        <p><time><%= moment(post.date).fromNow() %></time></p>
+                        <p>
+                            <%= (post.metadata) ? `${post.metadata.genre} / ` : "" %>
+                            <time><%= moment(post.date).fromNow() %></time>
+                        </p>
                     </footer>
                 </div>
             </div>
