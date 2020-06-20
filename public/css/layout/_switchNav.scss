@@ -1,0 +1,24 @@
+nav {
+    &.fixed {
+        display: none;
+        transition: transform 0.3s, opacity 0.3s;
+
+        &.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        &.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @media (max-width: 600px) {
+        &.static {
+            display: none;
+        }
+        &.fixed {
+            display: flex;
+        }
+    }
+}

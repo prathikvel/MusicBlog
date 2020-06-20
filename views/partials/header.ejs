@@ -11,7 +11,7 @@
 </head>
 <body>
     <% if (view === "home") { %>
-    <nav>
+    <nav class="static">
         <a class="logo" href="/">logo</a>
         <ul>
             <li><a href="#">Albums</a></li>
@@ -21,8 +21,15 @@
         </ul>
     </nav>
     <% } %>
-    <nav class="fixed <%= (view === "home") ? "hide" : "" %>">
-        <a class="logo" href="/">logo</a>
+    <nav class="fixed">
+        <div class="top">
+            <a class="logo" href="/">logo</a>
+            <div class="toggle">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
         <ul>
             <li><a href="#">Albums</a></li>
             <li><a href="#">Tracks</a></li>
