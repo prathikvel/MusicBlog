@@ -29,10 +29,8 @@ article .layout .content {
 
 article .layout .content img {
   width: 25%;
-  margin: 0 auto;
+  margin: -50px auto 0 auto;
   display: block;
-  -webkit-transform: translateY(calc(-100% / 3));
-          transform: translateY(calc(-100% / 3));
 }
 
 article .layout .content h2 {
