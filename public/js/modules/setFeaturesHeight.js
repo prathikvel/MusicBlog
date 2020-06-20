@@ -1,13 +1,16 @@
 function setFeaturesHeight () {
     const setFeaturesHeight = () => {
-        const max = window.matchMedia("(max-width: 1000px)");
-        const min = window.matchMedia("(min-width: 600px)");
+        const mediaQuery = window.matchMedia("(min-width: 600px)");
         const sideHeight = $(".side-a").outerHeight();
+        const sideAWhiteSpace = parseFloat($(".side-a footer").css("marginTop"));
+        const sideBWhiteSpace = parseFloat($(".side-b footer").css("marginTop"));
+        const sideWhiteSpace = (sideAWhiteSpace < sideBWhiteSpace) ? sideAWhiteSpace : sideBWhiteSpace;
+        const sideContentHeight = sideHeight - sideWhiteSpace;
 
-        if (max.matches && min.matches) {
-            $(".features .main").height(sideHeight);
+        if (mediaQuery.matches) {
+            $(".main").height(sideContentHeight);
         } else {
-            $(".features .main").removeAttr("style");
+            $(".main").removeAttr("style");
         }
     }
     setFeaturesHeight();
