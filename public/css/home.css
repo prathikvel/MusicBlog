@@ -190,7 +190,7 @@ section.features .layout .main {
   grid-area: main;
 }
 
-@media (min-width: 600px) {
+@media not all and (max-width: 600px) {
   section.features .layout .main {
     color: #F2F2F2;
     -webkit-box-pack: center;
@@ -246,7 +246,7 @@ section.features .layout .side-b {
   }
 }
 
-@media (min-width: 600px) {
+@media not all and (max-width: 600px) {
   nav ul a {
     position: relative;
   }
