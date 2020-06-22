@@ -204,7 +204,7 @@ section.features .layout .main {
     text-decoration: underline;
   }
   section.features .layout .main img {
-    min-height: none;
+    min-height: 0;
     max-height: 500px;
     -webkit-filter: brightness(75%);
             filter: brightness(75%);
